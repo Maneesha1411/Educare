@@ -1,0 +1,108 @@
+/* Reset spacing */
+
+
+/* Navbar container */
+.navbar {
+  width: 100%;
+  box-shadow: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Main nav list (logo + menu) */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  position: fixed;
+  color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* Logo image */
+.logos {
+  width: 180px;
+}
+
+.navlist ul li {
+
+  font-weight: 600;
+   list-style: none;
+  display: inline-block;
+  margin: 5px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.navlist ul li:hover {
+  color: #ffcd05;
+  transform: scale(1.1);
+}
+
+/* Optional: Button inside nav */
+.navlist ul li button {
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 15px;
+  background-color: #ffcd05;
+  color: #5d1a75;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.navlist ul li button:hover {
+  /* background-color: white; */
+  color: #5d1a75;
+  transform: scale(1.05);
+}
+
+/* ----------------------------
+   RESPONSIVE (Mobile Portrait)
+---------------------------- */
+@media (max-width: 1000px) {
+  .navlist {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navlist ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+    gap: 16px;
+  }
+
+  .navlist ul li {
+    font-size: 18px;
+  }
+
+  .logos {
+    height: 40px;
+    margin-bottom: 12px;
+  }
+}
+.dark-nav nav{
+    background-color:blue;
+    transition: 0.5s;
+    color: white;
+}
+@media(max-width:1000px){
+  .logos{
+    width:140px;
+  }
+  nav ul li{
+    margin: 10px 15px;
+  }
+}
+@media(max-width:840px){
+nav{
+  padding: 15px 0;
+}
+}

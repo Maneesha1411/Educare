@@ -1,0 +1,168 @@
+/* Testimonials.css */
+
+/* Main container for the entire testimonials section */
+.testimonials {
+    margin: 80px auto;
+    padding: 0 80px;
+    position: relative; /* This is crucial for positioning the buttons */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Arrow Buttons --- */
+
+/* Shared styles for both next and back buttons */
+.next-btn, .back-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically centers the buttons */
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #2563eb; /* A nice modern blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 10; /* Ensures buttons are on top of the slider */
+}
+
+.next-btn:hover, .back-btn:hover {
+    background: #1d4ed8; /* A darker blue on hover */
+    transform: translateY(-50%) scale(1.05); /* Slight zoom effect */
+}
+
+/* Specific position for each button */
+.next-btn {
+    right: 0;
+}
+
+.back-btn {
+    left: 0;
+}
+
+.next-btn img, .back-btn img {
+    width: 20px; /* Control the size of the icon inside the button */
+}
+
+/* --- Slider Mechanism --- */
+
+/* The 'window' for the slider, it hides the parts of the list that overflow */
+.slider {
+    overflow: hidden; /* This is the key to the slider effect */
+    width: 100%;
+    max-width: 800px; /* Set a max-width for larger screens */
+    margin: 0 auto;
+}
+
+/* The list that moves left and right */
+.slider ul {
+    display: flex;
+    width: 400%; /* 100% for each of the 4 slides */
+    overflow-x: hidden;
+    transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth, bouncy transition */
+    padding: 0;
+    margin: 0;
+}
+
+/* Each individual slide */
+.slider li {
+    list-style: none;
+    width: 25%; /* Each slide takes up 1/4 of the total ul width */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* The content card for a single testimonial */
+.slide {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    line-height: 1.6;
+    color: #555;
+    transition: transform 0.3s ease;
+}
+
+.slide:hover {
+    transform: translateY(-5px); /* A subtle lift effect on hover */
+}
+
+/* --- User Info within the Slide --- */
+
+.userinfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.userinfo img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 3px solid #e0e0e0;
+    object-fit: cover;
+}
+
+.userinfo h3 {
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.userinfo span {
+    color: #2563eb;
+    font-weight: 500;
+    display: block;
+    font-size: 0.9em;
+}
+
+/* The testimonial paragraph text */
+.slide p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* For tablets and smaller devices */
+@media (max-width: 800px) {
+    .testimonials {
+        padding: 0 40px;
+    }
+    .next-btn, .back-btn {
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    .slide {
+        padding: 25px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 600px) {
+    .testimonials {
+        padding: 0 20px;
+    }
+    /* Move buttons slightly inward on mobile so they don't touch the edge */
+    .next-btn {
+        right: -10px;
+    }
+    .back-btn {
+        left: -10px;
+    }
+    .userinfo h3 {
+        font-size: 1em;
+    }
+    .slide p {
+        font-size: 0.9em;
+    }
+}
